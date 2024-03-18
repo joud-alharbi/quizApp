@@ -42,7 +42,7 @@ Image.asset("assets/logo1.png"),
   onPressed: () {},
   style: ButtonStyle(
     fixedSize: MaterialStateProperty.all<Size>(
-      Size(200, 50), // Set the width to 200 and height to 50
+      Size(300, 50), // Set the width to 200 and height to 50
     ),
   ),
   child: Text('Start'),
