@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:my_quize_app/screens/Category.dart';
+import 'package:my_quize_app/screens/login.dart';
 import 'package:my_quize_app/screens/splash_screen.dart';
+import 'package:my_quize_app/screens/question.dart';
+
 import 'dart:ui';
 
 
@@ -15,7 +19,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Quize App',
       theme: ThemeData(
-         colorScheme: ColorScheme.fromSeed (seedColor:Colors.amber) ,
+         colorScheme: ColorScheme.fromSeed (seedColor:Color.fromARGB(255, 7, 12, 3)) ,
          useMaterial3: true,
       ),
 home: SplashScreen(),
