@@ -3,8 +3,12 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:my_quize_app/screens/question.dart';
+import 'package:my_quize_app/Data/ques_and_answer.dart';
+
 
 class Category extends StatelessWidget {
+
+
   const Category({super.key});
 
   @override
@@ -15,9 +19,9 @@ class Category extends StatelessWidget {
 
 
 
-        CategoryContainer("math quiz",  Color.fromARGB(255, 215, 239, 223),context),
-                CategoryContainer("history quiz", Color.fromARGB(255, 98, 163, 117),context),
-        CategoryContainer("programmig quiz", Color.fromARGB(255, 22, 63, 23),context),
+        categoryContainer("math quiz",  Color.fromARGB(255, 215, 239, 223),context,  mathQuizQuestionsAndAnswers),
+                categoryContainer("history quiz", Color.fromARGB(255, 98, 163, 117),context,  historyQuizQuestionsAndAnswers),
+        categoryContainer("programmig quiz", Color.fromARGB(255, 22, 63, 23),context,programmingQuizQuestionsAndAnswers  ),
 
 //Expanded(
  // child:   Container(
@@ -55,27 +59,33 @@ class Category extends StatelessWidget {
       ),
     );
   }
-  Widget CategoryContainer(String quizName,Color quizColor,context){
+ Widget categoryContainer(
+      String quizName, Color quizColor, context, List qList) {
     return Expanded(
       child: InkWell(
         onTap: () {
-          Navigator.push(  context,
-                      MaterialPageRoute <Void> (builder : (BuildContext context)=> const question() ,  //(builder: (context) => Category()),
-                    ),);
+          Navigator.push(
+            context,
+            MaterialPageRoute<void>(
+              builder: (BuildContext context) => question(
+                questionsAndAnswersList: qList,
+              ),
+            ),
+          );
         },
         child: Container(
-        child: Center(
-          child: Text(quizName,
-           style:TextStyle(fontSize: 18,fontWeight: FontWeight.bold),
-        )),
-        color:quizColor,
-          ),
+          child: Center(
+              child: Text(
+            quizName,
+            style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+          )),
+          color: quizColor,
+        ),
       ),
     );
   }
-  
-  }
-    
+}
+
     
     
        

@@ -6,8 +6,9 @@ import 'package:my_quize_app/screens/Category.dart';
 
 
 class Login extends StatelessWidget {
-  const Login({Key? key}) : super(key: key);
-final _formKey=GlobalKey <FormState>();
+ final _formKey=GlobalKey <FormState>();
+
+   Login({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,7 +25,7 @@ final _formKey=GlobalKey <FormState>();
                // mainAxisAlignment: MainAxisAlignment.start,//
                 children: [
                   SizedBox(
-                    height: 60,
+                    height: 70,
                   ),
                   Image.asset(
                     "assets/finger.jpg",
@@ -35,11 +36,11 @@ final _formKey=GlobalKey <FormState>();
                     height: 15,
                   ),
                      Text(" login to your account ..",
-                                   style: TextStyle(fontWeight:FontWeight.bold,fontSize:20,
+                                   style: TextStyle(fontWeight:FontWeight.bold,fontSize:25,
                          color: Color.fromARGB(255, 45, 101, 45)
                              ,fontFamily: 'SignikaNegative'),),
                   SizedBox(
-                    height: 50,
+                    height: 70,
                   ),
                 //  Align(
                    // alignment: AlignmentDirectional.centerStart,
@@ -49,7 +50,7 @@ final _formKey=GlobalKey <FormState>();
                   TextFormField(
                     validator: (value) {
                       if(value!.isEmpty){
-                        return"inter user name";}
+                        return"Enter user name !!";}
                       else if (!value.startsWith(RegExp(r'[A-Z]'))) {
       return "Username should start with a capital letter";
     } },
@@ -71,23 +72,9 @@ final _formKey=GlobalKey <FormState>();
                  // Align(
                  //   alignment: AlignmentDirectional.centerStart,
                  //   child: Text("Password")     ),
-                  TextFormField(
-                       obscureText:true,
-                    decoration: InputDecoration(
-                   
-                      suffixIcon: Icon(Icons.remove_red_eye_outlined),
-                      label: Text("Password"),
-                      enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
-                          width: 3,
-                          color: Color.fromARGB(255, 25, 45, 27),
-                        ),
-                        borderRadius: BorderRadius.circular(30),
-                      ),
-                    ),
-                  ),
+                
                   SizedBox(
-                    height: 135,
+                    height: 100,
                   ),
                   ElevatedButton(
                     onPressed: () {
@@ -99,7 +86,7 @@ final _formKey=GlobalKey <FormState>();
                           },
                     style: ButtonStyle(
                       minimumSize: MaterialStateProperty.all<Size>(
-                        Size(300, 50), 
+                        Size(310, 60), 
                       
                       ),
                        backgroundColor: MaterialStateProperty.all<Color>(
@@ -110,19 +97,19 @@ final _formKey=GlobalKey <FormState>();
                       style: TextStyle(fontSize: 17,),)
                   ),
                    SizedBox(
-                    height: 20,
+                    height: 30,
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Image.asset("assets/google.png",
-                    width: 20,height: 20, ),
+                    width: 30,height: 30, ),
                     SizedBox(width: 10,),
                      Image.asset("assets/facebook.png",
-                   width: 20,height: 20,   ),
+                   width: 30,height: 30,   ),
                SizedBox(width: 10,),
                         Image.asset("assets/linkedin.png",
-                    width: 20,height: 20,   ),
+                    width: 30,height: 30,   ),
             
               
                     ],

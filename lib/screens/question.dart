@@ -1,103 +1,89 @@
 import 'package:flutter/material.dart';
 import 'package:my_quize_app/screens/score.dart';
 
-class question extends StatelessWidget {
-  const question({super.key});
+class question extends StatefulWidget {
+    final List? questionsAndAnswersList;
+
+   question({super.key , this.questionsAndAnswersList});
 
   @override
+    State<question> createState() => _questionState();}
+
+class _questionState extends State<question> {
+  int _currentIndex = 0;
   Widget build(BuildContext context) {
-    return Scaffold(
-body:Padding(padding: EdgeInsets.only(top:30,bottom: 20,right: 12,left: 12),
-
-child: Column(
-  crossAxisAlignment: CrossAxisAlignment.center,
-  children: [
-Row(
-  children: [
-        Text("Question Number :",
-        style: TextStyle(fontSize: 25,
-        color:Color.fromARGB(255, 45, 101, 45)),),
-                Text("1 /5",
-                style: TextStyle(fontSize: 30,fontWeight: FontWeight.bold,
-                color: Color.fromARGB(255, 0, 63, 0))),
-                
-
-
-  ],
-),
-SizedBox(height: 30,),
-
-  Text("What is the capital city of Saudi Arabia? :",
-      style: TextStyle(fontSize: 18,
-    color:Color.fromARGB(255, 45, 101, 45)),),
-      SizedBox(height: 19,),
-
-       ElevatedButton(onPressed: (){}, style: ButtonStyle(
-    fixedSize: MaterialStateProperty.all<Size>(
-      Size(300, 50), // Set the width to 200 and height to 50
+    return SafeArea(
+      child: Scaffold(
+    body:Padding(padding: EdgeInsets.only(top:30,bottom: 20,right: 12,left: 12),
+    
+    child: Column(
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+    Row(
+      children: [
+          Text("Question Number :",
+          style: TextStyle(fontSize: 25,
+          color:Color.fromARGB(255, 48, 62, 67)),),
+                   Text(
+                      "${_currentIndex + 1}/  ${widget.questionsAndAnswersList!.length}  ",
+                      style: TextStyle(
+                          fontSize: 30,
+                          fontWeight: FontWeight.bold,
+                          color: Color.fromARGB(255, 112, 118, 90))),
+    
+    
+      ],
     ),
-        
-             backgroundColor: MaterialStateProperty.all<Color>(
-      Color.fromARGB(255, 231, 237, 207),
-    ),
-  ),
-  child: Text('Qassim', style: TextStyle(fontSize: 17,),
+    SizedBox(height: 30,),
+    
+     Text(widget.questionsAndAnswersList![_currentIndex]["ques"],
+                  style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                    color: Color.fromARGB(255, 48, 62, 67),
+                  )),
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 0.1,
               ),
-),
-      SizedBox(height: 12,),
 
-
-              ElevatedButton(onPressed: (){}, style: ButtonStyle(
-    fixedSize: MaterialStateProperty.all<Size>(
-      Size(300, 50), // Set the width to 200 and height to 50
-    ),
-        
-             backgroundColor: MaterialStateProperty.all<Color>(
-      Color.fromARGB(255, 231, 237, 207),
-    ),
-  ),
-  child: Text('Dammam', style: TextStyle(fontSize: 17,),
-              ),
-),
-      SizedBox(height: 12,),
-
-                            ElevatedButton(onPressed: (){},style: ButtonStyle(
-    fixedSize: MaterialStateProperty.all<Size>(
-      Size(300, 50), // Set the width to 200 and height to 50
-    ),
-        
-             backgroundColor: MaterialStateProperty.all<Color>(
-      Color.fromARGB(255, 231, 237, 207),
-    ),
-  ),
-  child: Text('Riyad', style: TextStyle(fontSize: 17,),
-              ),
-),
-
-SizedBox(height: 350,),
-ElevatedButton(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => score()),
-                    );
-                  },
-                  style: ButtonStyle(
-                    minimumSize: MaterialStateProperty.all<Size>(
-                      Size(300, 50), 
-          
-                    ),
-                     backgroundColor: MaterialStateProperty.all<Color>(
-                Color.fromARGB(240, 127, 199, 158),
-              ),
-                  ),
-                  child: Text('Submit',
-                    style: TextStyle(fontSize: 17,fontWeight: FontWeight.bold,
-                     color: Color.fromARGB(255, 231, 239, 201)),)
-                ),
-
-]),
-)
+               for (int i = 0;
+                  i <
+                      widget.questionsAndAnswersList![_currentIndex]["answers"]
+                          .length;
+                  i++)
+                ElevatedButton(
+                    onPressed: () {
+                      if ((_currentIndex + 1) <
+                          widget.questionsAndAnswersList!.length) {
+                        setState(() {
+                          // _currentIndex = _currentIndex + 1;
+                          _currentIndex++;
+                        });
+                      } else {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute<void>(
+                            builder: (BuildContext context) =>
+                                const score(),
+                          ),
+                        );
+                      }
+                    },
+                                        style: ButtonStyle(
+                      minimumSize: MaterialStateProperty.all<Size>(
+                        Size(200, 40), 
+                      
+                      ),
+                       backgroundColor: MaterialStateProperty.all<Color>(
+                  Color.fromARGB(255, 210, 222, 167),
+                       ),),
+                    child: Text(widget.questionsAndAnswersList![_currentIndex]
+                        ["answers"][i])),
+    
+    
+    ]),
+    )
+      ),
     );
   }
 }
