@@ -64,7 +64,7 @@ class _questionState extends State<question> {
                           context,
                           MaterialPageRoute<void>(
                             builder: (BuildContext context) =>
-                                const score(),
+                                const ScoreScreen(),
                           ),
                         );
                       }

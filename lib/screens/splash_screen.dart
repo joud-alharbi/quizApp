@@ -15,7 +15,7 @@ Widget build(BuildContext context) {
 decoration: BoxDecoration(
       image: DecorationImage(
         image: AssetImage(
-          "assets/whit.jpg"),
+          ""),
             fit: BoxFit.cover)) ,
 
          height:MediaQuery.of(context).size.height,

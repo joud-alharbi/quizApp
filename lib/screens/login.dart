@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_quize_app/screens/question.dart';
 import 'package:my_quize_app/screens/Category.dart';
+import 'package:my_quize_app/utils/global_variable.dart';
 
 
 class Login extends StatelessWidget {
@@ -48,6 +49,8 @@ class Login extends StatelessWidget {
                                
             
                   TextFormField(
+                
+                 controller: userNameController,
                     validator: (value) {
                       if(value!.isEmpty){
                         return"Enter user name !!";}
