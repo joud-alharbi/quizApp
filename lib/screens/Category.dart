@@ -2,8 +2,8 @@ import 'dart:ffi';
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:my_quize_app/screens/question.dart';
 import 'package:my_quize_app/Data/ques_and_answer.dart';
+import 'package:my_quize_app/screens/question.dart';
 
 
 class Category extends StatelessWidget {
@@ -67,7 +67,7 @@ class Category extends StatelessWidget {
           Navigator.push(
             context,
             MaterialPageRoute<void>(
-              builder: (BuildContext context) => question(
+              builder: (BuildContext context) => QuestionPage(
                 questionsAndAnswersList: qList,
               ),
             ),

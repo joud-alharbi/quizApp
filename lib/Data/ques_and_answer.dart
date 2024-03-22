@@ -1,5 +1,3 @@
-
-
 List mathQuizQuestionsAndAnswers = [
   {
     "ques": "What is pi (π) rounded to two decimal places?",
@@ -66,10 +64,44 @@ List historyQuizQuestionsAndAnswers = [
   },
   {
     "ques": "In which year did the Roman Empire end?",
-    "answers": ["476 AD", "356 BC", "1453 AD", "1066 AD", "12266 AD", "10634346 AD", "103466 AD", "1063446 AD"],
+    "answers": ["476 AD", "356 BC", "1453 AD", "1066 AD"],
     "correctIndex": 0 // Correct answer is "476 AD"
   },
-  // Add correct indices for remaining history questions
+  {
+    "ques": "Who wrote 'Romeo and Juliet'?",
+    "answers": ["William Shakespeare", "Charles Dickens", "Jane Austen", "Mark Twain"],
+    "correctIndex": 0 // Correct answer is "William Shakespeare"
+  },
+  {
+    "ques": "Which famous scientist formulated the theory of relativity?",
+    "answers": ["Albert Einstein", "Isaac Newton", "Galileo Galilei", "Nikola Tesla"],
+    "correctIndex": 0 // Correct answer is "Albert Einstein"
+  },
+  {
+    "ques": "Who was the first person to set foot on the moon?",
+    "answers": ["Neil Armstrong", "Buzz Aldrin", "Alan Shepard", "Yuri Gagarin"],
+    "correctIndex": 0 // Correct answer is "Neil Armstrong"
+  },
+  {
+    "ques": "What event marked the beginning of the Renaissance?",
+    "answers": ["Fall of Constantinople", "Invention of the printing press", "End of the Dark Ages", "Discovery of America"],
+    "correctIndex": 0 // Correct answer is "Fall of Constantinople"
+  },
+  {
+    "ques": "Which war was known as the 'Great War'?",
+    "answers": ["World War I", "World War II", "Vietnam War", "Cold War"],
+    "correctIndex": 0 // Correct answer is "World War I"
+  },
+  {
+    "ques": "Who was the last pharaoh of ancient Egypt?",
+    "answers": ["Cleopatra", "Hatshepsut", "Nefertiti", "Ramses II"],
+    "correctIndex": 0 // Correct answer is "Cleopatra"
+  },
+  {
+    "ques": "Who was the first female Prime Minister of the United Kingdom?",
+    "answers": ["Margaret Thatcher", "Theresa May", "Indira Gandhi", "Angela Merkel"],
+    "correctIndex": 0 // Correct answer is "Margaret Thatcher"
+  },
 ];
 
 List programmingQuizQuestionsAndAnswers = [
@@ -83,5 +115,28 @@ List programmingQuizQuestionsAndAnswers = [
     "answers": ["Java", "C", "Python", "JavaScript"],
     "correctIndex": 3 // Correct answer is "JavaScript"
   },
-  // Add correct indices for remaining programming questions
-];
+  {
+    "ques": "What is the output of 'print(2+2)' in Python?",
+    "answers": ["4", "22", "Syntax Error", "None of the above"],
+    "correctIndex": 0 // Correct answer is "4"
+  },
+  {
+    "ques": "What is the primary purpose of CSS in web development?",
+    "answers": ["Styling HTML elements", "Creating interactive web pages", "Backend programming", "Database management"],
+    "correctIndex": 0 // Correct answer is "Styling HTML elements"
+  },
+  {
+    "ques": "Which data structure uses LIFO (Last In, First Out) principle?",
+    "answers": ["Queue", "Stack", "Heap", "Tree"],
+    "correctIndex": 1 // Correct answer is "Stack"
+  },
+  {
+    "ques": "What is the main function of a constructor in object-oriented programming?",
+    "answers": ["To create new objects", "To delete objects", "To update objects", "To display objects"],
+    "correctIndex": 0 // Correct answer is "To create new objects"
+  },
+  {
+    "ques": "What is the keyword used in Python to define a function?",
+    "answers": ["function", "def", "define", "fun"],
+    "correctIndex": 1
+  }];
